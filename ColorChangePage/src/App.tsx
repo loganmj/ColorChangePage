@@ -1,17 +1,20 @@
 import "./App.css";
-import useBackgroundColor from "./components/BackgroundColorHook";
-import BackgroundColorProvider from "./components/BackgroundColorProvider";
-import ColorButtons from "./components/ColorButtons";
+import ColorButton from "./components/ColorButton";
+import ColorLabelContextProvider from "./components/ColorLabelContextProvider";
+import ColorLabel from "./components/ColorLabel";
 
 const App: React.FC = () => {
-  const { color } = useBackgroundColor();
-
   return (
-    <BackgroundColorProvider>
-      <div style={{ backgroundColor: color, height: "100vh", width: "100vw" }}>
-        <ColorButtons />
+    <ColorLabelContextProvider>
+      <div className="buttons-div">
+        <ColorButton text="red"></ColorButton>
+        <ColorButton text="green"></ColorButton>
+        <ColorButton text="blue"></ColorButton>
       </div>
-    </BackgroundColorProvider>
+      <div className="label-div">
+        <ColorLabel />
+      </div>
+    </ColorLabelContextProvider>
   );
 };
 
