@@ -1,10 +1,10 @@
 import IColorButton from "./IColorButton";
-import useColorLabelContext from "./ColorLabelHook";
+import useColorContext from "./ColorContextHook";
 import "../styles/ColorButton.css";
 
 const ColorButton: React.FC<IColorButton> = ({ text }) => {
   // Use context for color property
-  const { changeColorText } = useColorLabelContext();
+  const { changeColorText } = useColorContext();
 
   // Handles the button press
   const handleButtonClick = () => {

@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 import { useState } from "react";
-import ColorLabelContext from "./ColorLabelContext";
+import ColorContext from "./ColorContext";
 
 // A provider component for the color label context
-const ColorLabelContextProvider: React.FC<{ children: ReactNode }> = ({
+const ColorContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   // Default color text
@@ -22,10 +22,10 @@ const ColorLabelContextProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   return (
-    <ColorLabelContext.Provider value={{ colorText, changeColorText }}>
+    <ColorContext.Provider value={{ colorText, changeColorText }}>
       <div style={{ backgroundColor: backgroundColor }}>{children}</div>
-    </ColorLabelContext.Provider>
+    </ColorContext.Provider>
   );
 };
 
-export default ColorLabelContextProvider;
+export default ColorContextProvider;

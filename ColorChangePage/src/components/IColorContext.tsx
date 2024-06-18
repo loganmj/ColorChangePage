@@ -1,7 +1,7 @@
 // Interface for color label context
-interface IColorLabelContext {
+interface IColorContext {
   colorText: string;
   changeColorText: (colorText: string) => void;
 }
 
-export default IColorLabelContext;
+export default IColorContext;

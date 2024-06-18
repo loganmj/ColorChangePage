@@ -1,6 +1,6 @@
 import "./App.css";
 import ColorButton from "./components/ColorButton";
-import ColorLabelContextProvider from "./components/ColorLabelContextProvider";
+import ColorLabelContextProvider from "./components/ColorContextProvider";
 import ColorLabel from "./components/ColorLabel";
 
 const App: React.FC = () => {
