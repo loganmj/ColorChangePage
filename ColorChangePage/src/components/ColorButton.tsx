@@ -1,5 +1,6 @@
 import IColorButton from "./IColorButton";
 import useColorLabelContext from "./ColorLabelHook";
+import "../styles/ColorButton.css";
 
 const ColorButton: React.FC<IColorButton> = ({ text }) => {
   // Use context for color property
@@ -9,7 +10,11 @@ const ColorButton: React.FC<IColorButton> = ({ text }) => {
   const handleButtonClick = () => {
     changeColorText(text);
   };
-  return <button onClick={handleButtonClick}>{text}</button>;
+  return (
+    <button className="color-button" onClick={handleButtonClick}>
+      {text}
+    </button>
+  );
 };
 
 export default ColorButton;
