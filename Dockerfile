@@ -1,7 +1,7 @@
 # Build the React application
 FROM node:14 AS Build
 WORKDIR /app
-COPY ./ColorChangePage/package.json ./ColorChangePage/package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install
 COPY . ./
 RUN npm run build
