@@ -17,7 +17,7 @@ COPY ColorChangePage/ .
 RUN npm run build
 
 # Serve the code using Vite
-CMD ["serve", "-s", "build", "-l", 3000]
+CMD ["serve", "-s", "build", "-l", "3000"]
 
 # Expose the port the app runs on
 EXPOSE 3000
