@@ -1,9 +1,23 @@
-# Build the React application
+# Use latest Node runtime
 FROM node:latest
+
+# Set the working directory
 WORKDIR /app
-COPY package*.json ./
+
+# Copy the package.json and package-lock.json
+COPY ColorChangePage/package*.json ./
+
+# Install dependencies
 RUN npm install
-COPY . .
+
+# Copy the rest of the app's source code
+COPY ColorChangePage/ .
+
+# Build for production
 RUN npm run build
+
+# Serve the code using Vite
+CMD ["serve", "-s", "build", "-l", 3000]
+
+# Expose the port the app runs on
 EXPOSE 3000
-CMD ["npm", "run", "dev"]
